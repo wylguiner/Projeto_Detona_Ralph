@@ -1,0 +1,96 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+    top: 240px;
+}
+
+#start {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    height: 5rem;
+    border: 0px;
+    border-radius: 50px;
+    background-color: #ff0000;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#start:hover {
+    background-color: #ff0000c5
+}
+
+#start:active {
+    background-color: #000000;
+    color: red;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.8); /* Cor preta com 50% de opacidade */
+    display: block;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-image: url("../imgs/bricks.png");
+
+}
+
+.menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    border-bottom: 5px solid #ffd700;
+}
+
+.menu-time h2:nth-child(2), .menu-score h2:nth-child(2){
+    margin-top: 1rem;
+}
+
+.menu-lives {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.square {
+    height: 150px;
+    width: 150px;
+    border: 1px solid #000000;
+    background-color: #7fffd4;
+}
+
+.enemy {
+    background-image: url("../imgs/Ralph_8-bits.webp");
+    background-size: cover;
+}
