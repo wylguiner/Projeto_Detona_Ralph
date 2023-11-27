@@ -4,6 +4,7 @@
 
 .button-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 2;
@@ -32,6 +33,18 @@
 #start:active {
     background-color: #000000;
     color: red;
+}
+
+.button-container h2 {
+    position: absolute;
+    top: 30px;
+    color: #ff0000;
+}
+
+.difficulty-container {
+    position: absolute;
+    top: 90px;
+    color: #ff0000;
 }
 
 .overlay {

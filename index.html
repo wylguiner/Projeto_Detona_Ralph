@@ -35,8 +35,19 @@
                 <h2>x<span id="lives">3</span></h2>
             </div>
         </div>
-        <div class="button-container"> 
+        <div class="button-container" id="start-button"> 
             <button id="start">COMEÇAR JOGO!</button>
+            <h2>Dificuldade</h2>
+            <div class="difficulty-container">
+                <input type="radio" id="facil" name="difficulty" value="facil" checked>
+                <label for="facil">Fácil</label><br>
+                <input type="radio" id="medio" name="difficulty" value="medio">
+                <label for="medio">Médio</label><br>
+                <input type="radio" id="dificil" name="difficulty" value="dificil">
+                <label for="dificil">Difícil</label><br>
+                <input type="radio" id="impossivel" name="difficulty" value="impossivel">
+                <label for="impossivel">Impossível</label>
+            </div>
         </div>
         <div class="overlay" id="overlay"></div>
         <div class="panel">

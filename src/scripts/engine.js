@@ -5,6 +5,7 @@ const state = {
         timeLeft: document.querySelector("#time-left"),
         score: document.querySelector("#score"),
         lives: document.querySelector("#lives"),
+        difficulties: document.querySelectorAll('input[type="radio"][name="difficulty"]')
     },
     values: {
         timerId: null,
@@ -16,6 +17,7 @@ const state = {
         currentLives: 3,
     },
     button: document.getElementById("start"),
+    difficulty: document.getElementById("start-button"),
     overlay: document.getElementById("overlay")
 }
 
@@ -51,8 +53,35 @@ function randomSquare() {
     state.values.hitPosition = randomSquare.id;
 }
 
+// função para checar a dificuldade
+function checkDifficulty() {
+    state.view.difficulties.forEach(radioButton => {
+        radioButton.addEventListener('change', () => {
+            if (radioButton.checked) {
+                switch (radioButton.value) {
+                    case 'facil':
+                        state.values.gameVelocity = 1000;
+                        break;
+                    case 'medio':
+                        state.values.gameVelocity = 700;
+                        break;
+                    case 'dificil':
+                        state.values.gameVelocity = 400;
+                        break;
+                    case 'impossivel':
+                        state.values.gameVelocity = 100;
+                        break;
+                    default:
+                        state.values.gameVelocity = 1000;
+                }
+            }
+        })
+    }) 
+}
+
 // função para mover o inimigo entre os tiles
 function moveEnemy() {
+    clearInterval(state.values.timerId);
     state.values.timerId = setInterval(randomSquare, state.values.gameVelocity);
 }
 
@@ -85,11 +114,13 @@ function startGame() {
         state.values.countDownTimerId = setInterval(countDown, 1000);
         state.button.style.display = "none";
         state.overlay.style.display = "none";
+        state.difficulty.style.display = "none";
     })
 }
 
 // função inicial para iniciar tudo kkk
 function init() {
+    checkDifficulty()
     startGame();   
 }
 
