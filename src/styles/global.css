@@ -2,6 +2,10 @@
     font-family: 'Press Start 2P', cursive;
 }
 
+body {
+    background-image: url("../imgs/bricks.png");
+}
+
 .button-container {
     display: flex;
     flex-direction: column;
@@ -62,8 +66,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-image: url("../imgs/bricks.png");
-
+    
 }
 
 .menu {
@@ -106,4 +109,25 @@
 .enemy {
     background-image: url("../imgs/Ralph_8-bits.webp");
     background-size: cover;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .menu {
+        font-size: .75rem;
+        padding-left: 5px; 
+    }
+
+    .menu-lives {
+        padding-right: 10px;
+    }
+
+    .square {
+        height: 120px;
+        width: 120px;
+    }
+
+    .button-container {
+        top: 170px;
+    }
 }
